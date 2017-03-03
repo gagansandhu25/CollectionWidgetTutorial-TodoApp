@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Todo App</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="todo_dialog_hint">What\'s in your mind ?</string>
+    <string name="todo_dialog_title">Add Todo</string>
+    <string name="todo_dialog_add">Add</string>
+    <string name="todo_dialog_cancel">Cancel</string>
 </resources>
