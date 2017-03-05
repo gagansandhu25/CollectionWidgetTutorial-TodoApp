@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -16,7 +15,7 @@ import java.util.ArrayList;
 
 public class TodosAdapter extends BaseAdapter {
 
-    private static final String TAG = "MovieReviewAdapter";
+    private static final String TAG = "TodosAdapter";
     private ArrayList<TodoModel> mTodos;
     private Context mContext;
 
@@ -25,14 +24,11 @@ public class TodosAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
 
-    public TodosAdapter(Context c, ArrayList<TodoModel> reviews) {
+    public TodosAdapter(Context c, ArrayList<TodoModel> todos) {
 
         mContext = c;
         inflater = LayoutInflater.from(mContext);
-        //mTodos = reviews;
-        mTodos.add(new TodoModel("todo item 1", 1));
-        mTodos.add(new TodoModel("todo item 2", 2));
-        mTodos.add(new TodoModel("todo item 3", 3));
+        mTodos = todos;
 
     }
 
