@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new AddTodoDialog().show(getFragmentManager(), "StockDialogFragment");
+                new AddTodoDialog().show(getFragmentManager(), "AddTodoDialogFragment");
             }
         });
     }
