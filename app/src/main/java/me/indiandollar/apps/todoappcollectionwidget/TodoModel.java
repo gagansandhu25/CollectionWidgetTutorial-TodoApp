@@ -7,8 +7,13 @@ package me.indiandollar.apps.todoappcollectionwidget;
 public class TodoModel {
 
     private String mId;
-    private Integer mText;
-    private String mPosition;
+    private String mText;
+    private Integer mPosition;
+
+    public TodoModel(String s, Integer i) {
+        setPosition(i);
+        setText(s);
+    }
 
     public String getId() {
         return mId;
@@ -18,19 +23,19 @@ public class TodoModel {
         mId = id;
     }
 
-    public Integer getText() {
+    public String getText() {
         return mText;
     }
 
-    public void setText(Integer text) {
+    public void setText(String text) {
         mText = text;
     }
 
-    public String getPosition() {
+    public Integer getPosition() {
         return mPosition;
     }
 
-    public void setPosition(String position) {
+    public void setPosition(Integer position) {
         mPosition = position;
     }
 }
