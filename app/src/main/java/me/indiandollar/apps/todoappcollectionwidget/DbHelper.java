@@ -26,8 +26,7 @@ public class DbHelper extends SQLiteOpenHelper {
         SQL_CREATE_TABLE = "CREATE TABLE " +
                 Contract.TABLE_NAME + "(" +
                 Contract._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                Contract.COL_TODO_TEXT + " TEXT NOT NULL, " +
-                Contract.COL_TODO_DISPLAY_POSITION + " INTEGER UNIQUE NOT NULL" +
+                Contract.COL_TODO_TEXT + " TEXT NOT NULL" +
                 ")";
 
         db.execSQL(SQL_CREATE_TABLE);

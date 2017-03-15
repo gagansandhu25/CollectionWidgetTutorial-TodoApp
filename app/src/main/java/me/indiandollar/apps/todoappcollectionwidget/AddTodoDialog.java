@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 /**
  * Created by Indian Dollar on 3/3/2017.
@@ -17,11 +18,15 @@ import android.view.WindowManager;
 
 public class AddTodoDialog extends DialogFragment {
 
+    private TextView mTodoItemText;
+
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = LayoutInflater.from(getActivity());
         View custom = inflater.inflate(R.layout.add_todo_dialog, null);
+
+        mTodoItemText = (TextView) custom.findViewById(R.id.dialogTask);
 
 
         builder.setView(custom);
@@ -47,6 +52,8 @@ public class AddTodoDialog extends DialogFragment {
     }
 
     private void addTodo() {
+        MainActivity a = (MainActivity) getActivity();
+        a.addTodoItem(mTodoItemText.getText().toString());
     }
 
 

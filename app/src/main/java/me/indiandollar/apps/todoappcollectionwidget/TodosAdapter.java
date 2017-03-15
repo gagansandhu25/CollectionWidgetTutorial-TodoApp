@@ -1,12 +1,17 @@
 package me.indiandollar.apps.todoappcollectionwidget;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.os.AsyncTask;
+import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -16,21 +21,20 @@ import java.util.ArrayList;
 public class TodosAdapter extends BaseAdapter {
 
     private static final String TAG = "TodosAdapter";
-    private ArrayList<TodoModel> mTodos;
+    private ArrayList<TodoModel> mTodos = new ArrayList<>();
     private Context mContext;
-
-    private ArrayList<TodoModel> arList = new ArrayList();
 
 
     private LayoutInflater inflater;
 
-    public TodosAdapter(Context c, ArrayList<TodoModel> todos) {
+    public TodosAdapter(Context c, ArrayList items) {
 
         mContext = c;
         inflater = LayoutInflater.from(mContext);
-        mTodos = todos;
+        mTodos = items;
 
     }
+
 
     @Override
     public int getCount() {

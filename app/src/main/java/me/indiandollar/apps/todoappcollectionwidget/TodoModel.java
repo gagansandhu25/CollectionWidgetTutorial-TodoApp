@@ -6,20 +6,20 @@ package me.indiandollar.apps.todoappcollectionwidget;
 
 public class TodoModel {
 
-    private String mId;
+    private int mId;
     private String mText;
     private Integer mPosition;
 
-    public TodoModel(String s, Integer i) {
-        setPosition(i);
+    public TodoModel(int i, String s) {
+        setId(i);
         setText(s);
     }
 
-    public String getId() {
+    public int getId() {
         return mId;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         mId = id;
     }
 
