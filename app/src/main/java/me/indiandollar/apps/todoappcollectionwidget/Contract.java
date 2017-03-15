@@ -11,7 +11,6 @@ public class Contract implements BaseColumns {
 
     public static final String TABLE_NAME = "todos_list";
     public static final String COL_TODO_TEXT = "task";
-    public static final String COL_TODO_DISPLAY_POSITION = "position";
 
     public static final String SCHEMA = "content://";
     public static final String AUTHORITY = "me.indiandollar.apps.todoappcollectionwidget";
