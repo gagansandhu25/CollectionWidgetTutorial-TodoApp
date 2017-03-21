@@ -15,7 +15,7 @@ public class Contract implements BaseColumns {
     public static final String SCHEMA = "content://";
     public static final String AUTHORITY = "me.indiandollar.apps.todoappcollectionwidget";
     public static final Uri BASE_CONTENT_URI = Uri.parse(SCHEMA + AUTHORITY);
-    public static final String PATH_TOTOS = "todos";
-    public static final Uri PATH_TODOS_URI = BASE_CONTENT_URI.buildUpon().appendPath(PATH_TOTOS).build();
+    public static final String PATH_TODOS = "todos";
+    public static final Uri PATH_TODOS_URI = BASE_CONTENT_URI.buildUpon().appendPath(PATH_TODOS).build();
 
 }

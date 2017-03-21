@@ -2,19 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
+              android:background="@color/colorWhite"
+              android:padding="5dp"
               android:layout_height="match_parent">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:text="@string/label_tasks_pending"
-        android:layout_height="wrap_content"/>
 
     <TextView
         android:id="@+id/tv_simpleWidgetTaskCount"
         android:layout_width="match_parent"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
+        android:textColor="@color/colorAccent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:textColor="@color/colorGray"
+        android:text="@string/label_tasks_pending"
+        android:gravity="center_horizontal"
         android:layout_height="wrap_content"/>
 
 </LinearLayout>

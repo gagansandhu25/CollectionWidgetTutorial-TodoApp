@@ -4,5 +4,5 @@
     android:initialLayout="@layout/simple_widget"
     android:resizeMode="horizontal"
     android:updatePeriodMillis="0"
-    android:previewImage="@drawable/icon_add"
+    android:previewImage="@drawable/simple_widget_preview"
     tools:ignore="UnusedAttribute" />

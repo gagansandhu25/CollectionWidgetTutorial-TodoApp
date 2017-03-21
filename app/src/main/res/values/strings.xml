@@ -5,6 +5,6 @@
     <string name="todo_dialog_title">Add Todo</string>
     <string name="todo_dialog_add">Add</string>
     <string name="todo_dialog_cancel">Cancel</string>
-    <string name="label_tasks_pending">Tasks Pending</string>
-    <string name="title_simple_widget">Pending Tasks</string>
+    <string name="label_tasks_pending">tasks pending</string>
+    <string name="title_simple_widget">Todo App - Pending Tasks</string>
 </resources>

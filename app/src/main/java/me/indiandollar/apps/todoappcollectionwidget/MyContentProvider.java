@@ -25,7 +25,7 @@ public class MyContentProvider extends ContentProvider {
     public static UriMatcher buildUriMatcher() {
         UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 
-        uriMatcher.addURI(Contract.AUTHORITY, Contract.PATH_TOTOS, TODOS_CODE);
+        uriMatcher.addURI(Contract.AUTHORITY, Contract.PATH_TODOS, TODOS_CODE);
 
         return uriMatcher;
     }
