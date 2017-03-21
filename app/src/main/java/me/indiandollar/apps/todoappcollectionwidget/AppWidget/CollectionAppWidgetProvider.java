@@ -10,6 +10,7 @@ import android.support.v4.app.TaskStackBuilder;
 import android.util.Log;
 import android.widget.RemoteViews;
 
+import me.indiandollar.apps.todoappcollectionwidget.DetailsActivity;
 import me.indiandollar.apps.todoappcollectionwidget.MainActivity;
 import me.indiandollar.apps.todoappcollectionwidget.R;
 
@@ -18,6 +19,8 @@ import me.indiandollar.apps.todoappcollectionwidget.R;
  */
 
 public class CollectionAppWidgetProvider extends AppWidgetProvider {
+
+    public static final String EXTRA_LABEL = "TASK_TEXT";
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
@@ -29,8 +32,21 @@ public class CollectionAppWidgetProvider extends AppWidgetProvider {
 
             );
 
+            // click event handler for the title, launches the app when the user clicks on title
+            Intent titleIntent = new Intent(context, MainActivity.class);
+            PendingIntent titlePendingIntent = PendingIntent.getActivity(context, 0, titleIntent, 0);
+            views.setOnClickPendingIntent(R.id.widgetTitleLabel, titlePendingIntent);
+
+
             Intent intent = new Intent(context, MyWidgetRemoteViewsService.class);
             views.setRemoteAdapter(R.id.widgetListView, intent);
+
+            // template to handle the click listener for each item
+            Intent clickIntentTemplate = new Intent(context, DetailsActivity.class);
+            PendingIntent clickPendingIntentTemplate = TaskStackBuilder.create(context)
+                    .addNextIntentWithParentStack(clickIntentTemplate)
+                    .getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+            views.setPendingIntentTemplate(R.id.widgetListView, clickPendingIntentTemplate);
 
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
