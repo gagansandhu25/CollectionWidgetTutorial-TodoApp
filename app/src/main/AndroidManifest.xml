@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".DetailsActivity">
+        </activity>
 
 
         <receiver
@@ -29,10 +31,25 @@
                        android:resource="@xml/simple_widget" />
         </receiver>
 
+
+        <receiver
+            android:name=".AppWidget.CollectionAppWidgetProvider"
+            android:label="@string/title_collection_widget" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="me.indiandollar.apps.todoappcollectionwidget.app.ACTION_DATA_UPDATED" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                       android:resource="@xml/collection_widget" />
+        </receiver>
+
         <provider
             android:authorities="me.indiandollar.apps.todoappcollectionwidget"
             android:name="me.indiandollar.apps.todoappcollectionwidget.MyContentProvider"
             android:exported="false"></provider>
+
+        <service android:name=".AppWidget.MyWidgetRemoteViewsService"
+                 android:permission="android.permission.BIND_REMOTEVIEWS"></service>
     </application>
 
 </manifest>

@@ -7,4 +7,5 @@
     <string name="todo_dialog_cancel">Cancel</string>
     <string name="label_tasks_pending">tasks pending</string>
     <string name="title_simple_widget">Todo App - Pending Tasks</string>
+    <string name="title_collection_widget">Todo App - My Tasks</string>
 </resources>

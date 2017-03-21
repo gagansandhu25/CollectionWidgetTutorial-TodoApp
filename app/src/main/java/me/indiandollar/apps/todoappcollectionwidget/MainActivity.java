@@ -19,6 +19,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import me.indiandollar.apps.todoappcollectionwidget.AppWidget.CollectionAppWidgetProvider;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
@@ -73,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
                         public void run() {
                             Toast.makeText(mContext, "New task created", Toast.LENGTH_LONG).show();
                             getTodoList();
+                            // this will send the broadcast to update the appwidget
+                            CollectionAppWidgetProvider.sendRefreshBroadcast(mContext);
                         }
                     });
                 } else {
