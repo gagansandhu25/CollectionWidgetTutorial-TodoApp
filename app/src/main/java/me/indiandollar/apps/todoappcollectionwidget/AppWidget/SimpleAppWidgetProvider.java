@@ -6,11 +6,13 @@ import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.v4.app.TaskStackBuilder;
 import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.TextView;
 
+import me.indiandollar.apps.todoappcollectionwidget.Contract;
 import me.indiandollar.apps.todoappcollectionwidget.R;
 
 /**
@@ -35,7 +37,17 @@ public class SimpleAppWidgetProvider extends AppWidgetProvider {
 
             );
 
-            views.setTextViewText(R.id.tv_simpleWidgetTaskCount, "10");
+            Cursor cursor = context.getContentResolver().query(
+                    Contract.PATH_TODOS_URI,
+                    new String[]{"count(*)"},
+                    null,
+                    null,
+                    null
+            );
+
+            cursor.moveToFirst();
+
+            views.setTextViewText(R.id.tv_simpleWidgetTaskCount, String.valueOf(cursor.getInt(0)));
 
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
