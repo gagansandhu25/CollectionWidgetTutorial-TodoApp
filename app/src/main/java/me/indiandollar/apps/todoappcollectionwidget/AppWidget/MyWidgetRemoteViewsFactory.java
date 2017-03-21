@@ -21,8 +21,6 @@ import me.indiandollar.apps.todoappcollectionwidget.R;
 
 public class MyWidgetRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
 
-    private static final String TAG = "MyWidgetRemoteViewsFac";
-    private ArrayList<String> mResults = new ArrayList<>();
     private Context mContext;
     private Cursor mCursor;
 
@@ -49,10 +47,6 @@ public class MyWidgetRemoteViewsFactory implements RemoteViewsService.RemoteView
                 null,
                 null,
                 Contract._ID + " DESC");
-
-
-        Log.d(TAG, "onDataSetChanged: " + mCursor.getCount());
-
 
         Binder.restoreCallingIdentity(identityToken);
 
